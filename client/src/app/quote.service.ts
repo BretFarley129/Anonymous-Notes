@@ -11,17 +11,9 @@ export class QuoteService {
   }
   
   getQuotes(){
-    return this._http.get('/quotes').subscribe(
-      (data)=>{
-        this.quotes = data.json().reverse();
-        console.log("fetched");
-      },
-      (err) => {
-        console.log(err);
-      }
-    )
+    return this._http.get('/quotes');
   }
-  something(){
+  sendIt(){
     return this.quotes
   }
   addQuote(theQuote){
